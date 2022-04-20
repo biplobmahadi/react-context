@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import HomeMemo from './components/Home';
+import { CounterContext } from './context/CounterContext';
 
-function App() {
+function Appp() {
+
+  const [state, setState] = useState({
+    count: 0,
+    setCount: () => setState((prev) => {
+      return {
+        ...prev, 
+        count: prev.count + 1
+      }
+    })
+  });
+
+  console.log('App rendered!')
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CounterContext.Provider value={state}>
+        <HomeMemo />
+      </CounterContext.Provider>
     </div>
   );
 }
 
+const App = React.memo(Appp);
 export default App;
