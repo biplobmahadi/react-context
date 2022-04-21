@@ -1,15 +1,15 @@
-import React, { useContext } from 'react'
-import { CounterContext } from '../context/CounterContext'
+import React from 'react'
+import { useCounterContext } from '../context/CounterContext'
 
 function Counter() {
-  const context = useContext(CounterContext)
+  const {count, setCount} = useCounterContext()
 
   console.log('Counter rendered!')
   return (
       <React.Fragment>
           <div>Counter</div>
-          <p>Value: {context.count}</p>
-          <button onClick={() => context.setCount && context.setCount()}>Add</button>
+          <p>Value: {count}</p>
+          <button onClick={() => setCount && setCount()}>Add</button>
       </React.Fragment>
   )
 }

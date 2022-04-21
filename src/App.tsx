@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import HomeMemo from './components/Home';
-import { CounterContext } from './context/CounterContext';
+import { CounterContextProvider } from './context/CounterContext';
 
 function Appp() {
 
@@ -18,9 +18,9 @@ function Appp() {
   console.log('App rendered!')
   return (
     <div className="App">
-      <CounterContext.Provider value={state}>
+      <CounterContextProvider value={state}>
         <HomeMemo />
-      </CounterContext.Provider>
+      </CounterContextProvider>
     </div>
   );
 }
