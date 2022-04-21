@@ -1,13 +1,14 @@
 import React from 'react'
-import MiddleMemo from './Middle'
+import CounterWithReducer from './CounterWithReducer';
+import CounterWithState from './CounterWithState';
 
 function Home() {
 
-  console.log('Home rendered!')
   return (
       <React.Fragment>
           <div>Home</div>
-          <MiddleMemo/>
+          <CounterWithState/>
+          <CounterWithReducer/>
       </React.Fragment>
   )
 }
