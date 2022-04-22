@@ -3,7 +3,6 @@ import MiddleMemo from './Middle'
 
 function Home() {
 
-  console.log('Home rendered!')
   return (
       <React.Fragment>
           <div>Home</div>

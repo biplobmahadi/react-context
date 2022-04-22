@@ -3,7 +3,6 @@ import CounterMemo from "./Counter";
 
 function SecondMiddle() {
 
-  console.log('SecondMiddle rendered!')
   return (
       <React.Fragment>
           <div>SecondMiddle</div>

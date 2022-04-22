@@ -1,15 +1,17 @@
 import React from 'react'
-import { useCounterContext } from '../context/CounterContext'
+import { add, addByFive } from '../store/actions/counter';
+import { useCounterContext } from '../store/context/counterContext'
 
 function Counter() {
-  const {count, setCount} = useCounterContext()
+  const {state, dispatch} = useCounterContext()
+  const {count} = state;
 
-  console.log('Counter rendered!')
   return (
       <React.Fragment>
           <div>Counter</div>
           <p>Value: {count}</p>
-          <button onClick={() => setCount && setCount()}>Add</button>
+          <button onClick={() => dispatch(add(1))}>Add</button>
+          <button onClick={() => dispatch(addByFive(5))}>Add 5</button>
       </React.Fragment>
   )
 }

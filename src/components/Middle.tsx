@@ -3,7 +3,6 @@ import SecondMiddleMemo from './SecondMiddle'
 
 function Middle() {
 
-  console.log('Middle rendered!')
   return (
       <React.Fragment>
           <div>Middle</div>
